@@ -4,22 +4,21 @@
   }
 
   @font-face {
-    font-family: "Thunder Bold"; 
+    font-family: "Thunder Bold";
     src: local("Thunder Bold"),
       url("./fonts/Thunder-ExtraBoldHC.ttf") format("truetype");
   }
 
   @font-face {
-    font-family: "Thunder Light"; 
+    font-family: "Thunder Light";
     src: local("Thunder Light"),
       url("./fonts/Thunder-ExtraLightLC.ttf") format("truetype");
   }
 
-  body {
+  .hero-section {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #d2ffdd;
   }
 
   .navbar {
@@ -28,7 +27,7 @@
     padding: 0 10rem;
     margin: 3rem;
     color: #233828;
-    
+
     p {
       font-size: 1.2rem;
       font-weight: bold;
@@ -61,4 +60,35 @@
       font-size: 1.8rem;
       font-family: "Thunder Light";
     }
+  }
+
+  .about-section {
+    height: 100vh;
+    background-color: #7aa785;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+
+    .about-title {
+      background: linear-gradient(to right,
+          rgb(255, 255, 255) 50%,
+          rgb(37, 37, 37) 50%);
+      background-size: 200% 100%;
+      background-position-x: 100%;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      margin-bottom: -250px;
+      margin-left: 50px;
+    }
+  }
+
+  #gradient-canvas {
+    width:100%;
+    height:100%;
+    --gradient-color-1: #4A4E4D; 
+    --gradient-color-2: #0E9AA7; 
+    --gradient-color-3: #F6CD61;  
+    --gradient-color-4: #3DA4AB;
   }
