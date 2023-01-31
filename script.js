@@ -14,14 +14,28 @@ tl
   .from('.nav-item', { opacity: 0, stagger: .04 })
 
 
-gsap.from('.about-title', {
-  scrollTrigger: {
-    trigger: '.about-title',
-    start: '20px 80%',
-    end: 'bottom 100px',
-    markers: true,
-    // scrub: true
-  },
-  opacity: 0,
-  duration: 1
-})
+
+//---------------------Landing Page ScrollTrigger---------------------
+function LandingPageScrollTrigger() {
+
+  gsap.to('body', { // LoadingAnimation---------------------
+      opacity: 1, duration: 1.3,
+  }) // /LoadingAnimation---------------------
+
+  let LandingPageScrollTrigger = gsap.timeline({
+      scrollTrigger: {
+          trigger: ".hero-section",
+          start: "0% 0%",
+          end: "100% 0%",
+          pin: ".hero-section",
+          scrub: 2.2,
+      }
+  })
+  LandingPageScrollTrigger
+      .set( '.hero-section', { scale: 2 } )
+      .to('.hero-section', { transform: 'translateZ(4500px)', scale: 0 }, 0)
+}
+
+window.onload = () => {
+  LandingPageScrollTrigger()
+}
