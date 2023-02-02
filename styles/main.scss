@@ -1,6 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+  
   * {
     margin: 0;
     padding: 0;
+    cursor: none;
   }
 
   @font-face {
@@ -16,7 +21,6 @@
   }
 
   .hero-section {
-    background: url(./figma.png);
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -25,7 +29,12 @@
     width: 100vw;
     overflow: hidden;
     perspective: 2200px;
-    background-color: white;
+    background-color:hsla(135,50%,96%,1);
+    background-image:
+    radial-gradient(at 48% 64%, hsla(118,67%,73%,1) 0px, transparent 50%),
+    radial-gradient(at 63% 95%, hsla(166,67%,73%,1) 0px, transparent 50%),
+    radial-gradient(at 44% 21%, hsla(159,67%,73%,1) 0px, transparent 50%),
+    radial-gradient(at 56% 42%, hsla(118,67%,73%,1) 0px, transparent 50%);
   }
 
   .navbar {
@@ -49,17 +58,18 @@
     justify-content: center;
     text-align: center;
     flex-grow: 1;
-    color: #233828;
 
     .title {
       text-align: center;
       font-family: "Thunder Bold";
       overflow: hidden;
       font-size: 10rem;
+      color: #22302f;
 
       .letter {
         display: inline-block;
         line-height: 1em;
+        background-color: transparent;
       }
     }
 
@@ -69,36 +79,35 @@
     }
   }
 
-  .about-section {
-    height: 100vh;
-    background-color: #7aa785;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
+  // Cursor
 
-    .about-title {
-      background: linear-gradient(to right,
-          rgb(255, 255, 255) 50%,
-          rgb(37, 37, 37) 50%);
-      background-size: 200% 100%;
-      background-position-x: 100%;
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      margin-bottom: -250px;
-      margin-left: 50px;
-    }
+  #cursor {
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999;
   }
-
-  .about-text {
-    text-align: center;
-      font-family: "Thunder Bold";
-      overflow: hidden;
-      // font-size: 10rem;
+  
+  #cursor-border {
+    --size: 30px;
+    position: fixed;
+    top: calc(var(--size) / -2);
+    left: calc(var(--size) / -2);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgb(0, 0, 0);
+    pointer-events: none;
+    transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out,
+      height 0.15s ease-out, background-color 0.15s ease-out;
+    z-index: 999;
   }
-
-  .about-letter {
-    display: inline-block;
-    line-height: 1em;
-  }
+  
+.container {
+  padding: 0 3rem;
+}

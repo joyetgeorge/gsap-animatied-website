@@ -14,7 +14,6 @@ tl
   .from('.nav-item', { opacity: 0, stagger: .04 })
 
 
-
 //---------------------Landing Page ScrollTrigger---------------------
 function LandingPageScrollTrigger() {
 
@@ -32,8 +31,7 @@ function LandingPageScrollTrigger() {
       }
   })
   LandingPageScrollTrigger
-      .set( '.hero-section', { scale: 2 } )
-      .to('.hero-section', { transform: 'translateZ(4500px)', scale: 0 }, 0)
+      .to('.hero-section', { transform: 'translateZ(4500px)', scale: 0.6 }, 0)
 }
 
 window.onload = () => {
